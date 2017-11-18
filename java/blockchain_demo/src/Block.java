@@ -7,9 +7,21 @@ import java.util.Arrays;
  *
  */
 public class Block {
-
+    /**
+     * Pointer to previous block 
+     */ 
     private int previous_hash;
+    /**
+     * Current block's hash 
+     */ 
     private int block_hash;
+    /**
+     * Array of strings where each string is a transcation payload. 
+     * This string payload will have format "USER:<ID> <ACTION> USER:<ID> <AMOUNT:COIN>"
+     * USER:ID is the public key or wallet id of the user
+     * ACTION is SENT or RECIEVED
+     * Amount is a double: Coin is BTC, ETH, etc. 
+     */ 
     private String[] transactions;
 
     public Block(int previous_hash, String[] transactions) {
